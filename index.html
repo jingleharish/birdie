@@ -4,6 +4,17 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
 <title>Score</title>
+<script>
+  (function(){
+    var ua = navigator.userAgent || '';
+    var isWearOS = /Wear ?OS|Android.*Wearable/i.test(ua);
+    var w = window.screen.width, h = window.screen.height;
+    var isSmallSquare = Math.max(w, h) <= 520 && Math.abs(w - h) <= 40;
+    if (isWearOS || isSmallSquare) {
+      location.replace('watch.html');
+    }
+  })();
+</script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Barlow+Condensed:wght@600;700&display=swap" rel="stylesheet">
 <style>
